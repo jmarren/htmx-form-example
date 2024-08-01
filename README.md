@@ -9,13 +9,6 @@ simply clone the repo, cd into the htmx-form-example directory, and run "air"
 air
 ```
 
-```
-```
-```
-
-
-
-
 
 ## Issue of Full-Page reload vs. Partial HTML
 
