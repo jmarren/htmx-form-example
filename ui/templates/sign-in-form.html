@@ -1,0 +1,61 @@
+{{ define "sign-in-form"}}
+<div id="page-content">
+  <div>
+    Sign In Form
+  </div>
+
+  <form id="sign-in-form" hx-post="/sign-in" hx-target="#page-content" hx-swap="outerHTML" hx-indicator="#loading">
+    <div class="item">
+      <label for="username">
+        Username
+      </label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="item">
+      <label for="password">
+        Password
+      </label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" value="Sign In">
+      Let's go!
+      <div id="loading" class="htmx-indicator"></div>
+      <style>
+        #loading {
+          width: 10px;
+          height: 10px;
+          background-color: blue;
+        }
+
+        .htmx-indicator {
+          opacity: 0;
+          transition: opacity 500ms ease-in;
+        }
+
+        .htmx-request .htmx-indicator {
+          opacity: 1
+        }
+
+        .htmx-request.htmx-indicator {
+          opacity: 1
+        }
+
+        @keyframes spin {
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
+        @keyframes grow {
+          to {
+            width: 14px;
+            height: 14px;
+            margin-top: -8px;
+            right: 13px;
+          }
+        }
+      </style>
+    </button>
+  </form>
+</div>
+{{ end }}

@@ -1,0 +1,34 @@
+{{ define "base"}}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>{{ .Title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This form uses HTMX!">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+
+<body>
+
+
+  <main>
+    <div id="page-container">
+      {{ if eq .PartialTemplate "sign-in-form" }}
+      {{ template "sign-in-form" .Data}}
+      {{ else if eq .PartialTemplate "sign-in-success"}}
+      {{ template "sign-in-success"}}
+      {{ else }}
+      {{ template "index"}}
+      {{ end }}
+    </div>
+  </main>
+
+</body>
+
+</html>
+
+{{ end }}
