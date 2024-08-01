@@ -4,7 +4,6 @@ An example of how to create a form with HTMX.
 ## Usage
 simply clone the repo, cd into the htmx-form-example directory, and run "air"
 
-```
 ```bash
 air
 ```
